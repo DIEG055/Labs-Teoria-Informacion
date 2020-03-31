@@ -50,28 +50,28 @@ figure(1);
 subplot(4,1,1); plot( t, rec , '-r' ); xlabel('\t'); ylabel('X(\w)'); title('Funcion original en tiempo'); grid;
 subplot(4,1,2); plot( w, abs(LPF_tiem)  ); xlabel('\t'); ylabel('X(\w)'); title('PASA BAJAS en tiempo'); grid;
 subplot(4,1,3); plot( w, f_rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en Frecuencia'); grid;
-subplot(4,1,4); plot( w, abs(LPF_fre)); xlabel('\w'); ylabel('X(\w)'); title('PASA BAJAS en frecuencia'); grid;
+subplot(4,1,4); plot( w, real(LPF_fre)); xlabel('\w'); ylabel('X(\w)'); title('PASA BAJAS en frecuencia'); grid;
 
 #HPF
 figure(2);
 subplot(4,1,1); plot( t, rec , '-r' ); xlabel('\t'); ylabel('X(\w)'); title('Funcion original en tiempo')
 subplot(4,1,2); plot( w, abs(HPF_tiem)); xlabel('\t'); ylabel('X(\w)'); title('PASA ALTAS en tiempo'); grid;
 subplot(4,1,3); plot( w, f_rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en Frecuencia'); grid;
-subplot(4,1,4); plot( w, abs(HPF_fre) ); xlabel('\w'); ylabel('X(\w)'); title('PASA ALTAS en frecuencia'); grid;
+subplot(4,1,4); plot( w, real(HPF_fre) ); xlabel('\w'); ylabel('X(\w)'); title('PASA ALTAS en frecuencia'); grid;
 
 #BPF
 figure(3);
 subplot(4,1,1); plot( t, rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en tiempo')
 subplot(4,1,2); plot( w, abs(BPF_tiem)); xlabel('\w'); ylabel('X(\w)'); title('PASA BANDAS en tiempo'); grid;
 subplot(4,1,3); plot( w, f_rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en Frecuencia'); grid;
-subplot(4,1,4); plot( w, abs(BPF_fre)  ); xlabel('\w'); ylabel('X(\w)'); title('PASA BANDAS en frecuencia'); grid;
+subplot(4,1,4); plot( w, real(BPF_fre)  ); xlabel('\w'); ylabel('X(\w)'); title('PASA BANDAS en frecuencia'); grid;
 
 #BSF
 figure(4);
 subplot(4,1,1); plot( t, rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en tiempo')
 subplot(4,1,2); plot( w, abs(BSF_tiem) ); xlabel('\w'); ylabel('X(\w)'); title('SUPRIME BANDAS en tiempo'); grid;
 subplot(4,1,3); plot( w, f_rec , '-r' ); xlabel('\w'); ylabel('X(\w)'); title('Funcion original en Frecuencia'); grid;
-subplot(4,1,4); plot( w, abs(BSF_fre)  ); xlabel('\w'); ylabel('X(\w)'); title('SUPRIME BANDAS en frecuencia'); grid;
+subplot(4,1,4); plot( w, real(BSF_fre)  ); xlabel('\w'); ylabel('X(\w)'); title('SUPRIME BANDAS en frecuencia'); grid;
 
 
 

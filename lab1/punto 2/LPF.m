@@ -1,4 +1,4 @@
-function X = LPF(y,w1)
+function X = LPF(y,w1,td=0)
   #--- FILTRO LPF ---
   # Este filtro se comporta asi
   # 1, si -w1 <= y(i) <= w1 
@@ -14,7 +14,7 @@ function X = LPF(y,w1)
   X=zeros(1,len);
   for i=1:len
     if y1(i) <= w1
-      X(i)=1;
+      X(i)=1+ exp(-j*y(i)*td);
     endif
   endfor
  
