@@ -154,9 +154,9 @@ subplot(1,1,1);plot(t1,y,'k');axis([0 50 -1.5 1.5]); title('Se�al codificada h
 %-------Literal e. RECUPERAR M(T)---------
 
 sum=0;
-w_m=2*pi*f_m;
-for i=0:2*T_m
-  fun=F(i*f_s)*(sin(w_m.*(t-i*f_s))/w_m.*(t-i*f_s));
+w_m=2*pi*f_m; # f_m es la frecueencia
+for i=0:2*T_m #T_m es el periodo
+  fun=F(i*f_s)*(sin(w_m.*(t-i*f_s))/w_m.*(t-i*f_s)); #f_s frecuencia de muestreo   t Arreglo para el muestreo
   sum=sum+fun;
 endfor
 
