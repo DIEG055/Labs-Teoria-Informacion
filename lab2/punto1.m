@@ -39,11 +39,14 @@ subplot(3,1,3);stem(t,xq,'k'); title('F(t) cuantizada');xlabel('nT_s'); ylabel('
 
 %------Literal c. CODIFICACION--------
 
-pulsos_binarios = log2(n); #log_2 (n) pulsos binarios por cada muestreo de la senal
+pulsos_binarios = n; #n pulsos binarios por cada muestreo de la senal
 num_total_pulsos = length(F(t))*pulsos_binarios; #Cantidad total de pulsos binarios necesarios para transmitir la senal
 x_pulsos = [0:num_total_pulsos-1]; #Arreglo de cantidad total de pulsos
 y_niveles= get_nivel(xq,n,xmax);   
 y_niveles_binario = convertir_10(y_niveles,pulsos_binarios); #arreglo de binarios final
+
+disp(["Codificacion del mensaje con ", num2str(n), " pulsos binarios por cada muestreo de la señal"])
+y_niveles_binario
 
 %-------Literal d. REPRESENTACION DEL PULSO-------------------------------
 disp("Seleccione el tipo de codificaci�n :");
@@ -57,7 +60,8 @@ opcion=input("ingrese la opci�n: ");
 y=[];
 
 #Tipos dependiendo de la eleccion
-f_s=100;
+f_s=length(y_niveles_binario);
+
 #No Return to Zero
 NRZ=ones(1,f_s);
 #Return Zero
@@ -80,7 +84,6 @@ switch (opcion)
 		end
   #bipolar NRZ
 	case 2
-		disp("caso 2");
 		tipo=NRZ; #arreglo de unos
 		for i=1:length(y_niveles_binario)
 		    switch y_niveles_binario(i)
@@ -143,8 +146,11 @@ switch (opcion)
 endswitch
 
 t1=(0:(length(y)-1))/f_s;
+len= t1(end);
 figure(2);
-subplot(1,1,1);plot(t1,y,'k');axis([0 100 -1.1 1.1]); title('Se�al codificada');xlabel('nT_s'); ylabel('x(nT_s)');
+subplot(1,1,1);plot(t1,y,'k');axis([0 len -1.5 1.5]); title('Se�al codificada total');xlabel('nT_s'); ylabel('x(nT_s)');
+figure(3);
+subplot(1,1,1);plot(t1,y,'k');axis([0 50 -1.5 1.5]); title('Se�al codificada hasta eje x= 50');xlabel('nT_s'); ylabel('x(nT_s)');
 %-------Literal e. RECUPERAR M(T)---------
 
 sum=0;
@@ -154,6 +160,6 @@ for i=0:2*T_m
   sum=sum+fun;
 endfor
 
-figure(3);
+figure(4);
 plot(t,sum); title('Recuperacion de la se�al');
 

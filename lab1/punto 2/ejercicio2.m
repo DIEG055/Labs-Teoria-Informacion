@@ -1,15 +1,17 @@
 
 clear
 
-#Leer el valor a
+
+
+#funcion
 ok = false;
 while (~ok)
   try
-    a=input("Ingrese el ancho del pulso cuadrado. ");
-    
+    a=input("Ingrese la funcion ","s");
+    F_input=inline(a,'x');
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -18,10 +20,9 @@ ok = false;
 while (~ok)
   try
     T=input("Ingrese valor T. ");
-    
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -30,10 +31,9 @@ ok = false;
 while (~ok)
   try
     Ts=input("Ingrese valor Ts. ");
-    
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -42,10 +42,9 @@ ok = false;
 while (~ok)
   try
     Wc=input("Ingrese valor Wc. ");
-    
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -54,10 +53,9 @@ ok = false;
 while (~ok)
   try
     Wc_1=input("Ingrese valor Wc 1. ");
-    
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -66,10 +64,9 @@ ok = false;
 while (~ok)
   try
     Wc_2=input("Ingrese valor Wc 2.");
-    
     ok = true;
   catch
-    printf("Por favor, ingrese un numero válido.\n\n");#Esta función try-catch es para que el usuario solo pueda ingresar números, ya que n es una variable numérica. Esta función se ve frecuentemente en este código.
+    printf("Por favor, ingrese un numero vï¿½lido.\n\n");#Esta funciï¿½n try-catch es para que el usuario solo pueda ingresar nï¿½meros, ya que n es una variable numï¿½rica. Esta funciï¿½n se ve frecuentemente en este cï¿½digo.
   end_try_catch
 endwhile
 
@@ -86,7 +83,7 @@ w = t( 1 : 2 : end );
 
 
 #Funcion rectangular
-rec = Funcion(t,a);
+rec = F_input(t);
 
 #Funcion frecuencia analitica
 rec_fr = 2*a*Sa(w.*a);
