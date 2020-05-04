@@ -1,14 +1,12 @@
 
 clear
 
-
-
-#funcion
+#Leer el valor a
 ok = false;
 while (~ok)
   try
-    a=input("Ingrese la funcion ","s");
-    F_input=inline(a,'x');
+    a=input("Ingrese el ancho del pulso cuadrado. ");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -20,6 +18,7 @@ ok = false;
 while (~ok)
   try
     T=input("Ingrese valor T. ");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -31,6 +30,7 @@ ok = false;
 while (~ok)
   try
     Ts=input("Ingrese valor Ts. ");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -42,6 +42,7 @@ ok = false;
 while (~ok)
   try
     Wc=input("Ingrese valor Wc. ");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -53,6 +54,7 @@ ok = false;
 while (~ok)
   try
     Wc_1=input("Ingrese valor Wc 1. ");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -64,6 +66,7 @@ ok = false;
 while (~ok)
   try
     Wc_2=input("Ingrese valor Wc 2.");
+    
     ok = true;
   catch
     printf("Por favor, ingrese un numero v�lido.\n\n");#Esta funci�n try-catch es para que el usuario solo pueda ingresar n�meros, ya que n es una variable num�rica. Esta funci�n se ve frecuentemente en este c�digo.
@@ -83,7 +86,7 @@ w = t( 1 : 2 : end );
 
 
 #Funcion rectangular
-rec = F_input(t);
+rec = Funcion(t,a);
 
 #Funcion frecuencia analitica
 rec_fr = 2*a*Sa(w.*a);
