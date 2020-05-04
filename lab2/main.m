@@ -15,13 +15,13 @@ q_max=input("ingrese el valor maximo al cual se quiere cuanticizar: ");
 
 
 #PUNTO A
-t = muestreo(t,f,T)
+t = muestreo(t,f,T);
 
 # PUNTO B
-xq = quantizacacionUniforme(t,f,q_max,n)
+xq = quantizacacionUniforme(t,f,q_max,n);
 
 # PUNTO C
-y_niveles_binario = codificacion(n,t,f,xq,q_max)
+y_niveles_binario = codificacion(n,t,f,xq,q_max);
 
 # PUNTO D
 disp("Seleccione el numero correspondiente al tipo de codificacion:");
