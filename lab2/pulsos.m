@@ -89,16 +89,18 @@ endswitch
   t1=(0:(length(y)-1))/f_s;
   len= t1(end);
   figure(3);
-  subplot(1,1,1);plot(t1,y,'k');
-  axis([0 len -1.5 1.5]);
-  title('Seï¿½al codificada total');
-  xlabel('nT_s');
-  ylabel('x(nT_s)');
-  figure(4);
-  subplot(1,1,1);
+    subplot(2,1,1);
   plot(t1,y,'k');
   axis([0 50 -1.5 1.5]);
-  title('Seï¿½al codificada hasta eje x= 50');
+  title('Primera parte de la Señal codificada');
   xlabel('nT_s'); 
   ylabel('x(nT_s)');
+  subplot(2,1,2);
+  plot(t1,y,'k');
+  axis([0 len -1.5 1.5]);
+  title('Señal codificada total');
+  xlabel('nT_s');
+  ylabel('x(nT_s)');
+
+
 endfunction

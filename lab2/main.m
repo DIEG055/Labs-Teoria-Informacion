@@ -1,6 +1,6 @@
 
 # Se pide la funcion f(x) al usuario
-funcion= input('Ingrese la funciï¿½n: ', "s");
+funcion= input('Ingrese la funcion: ', "s");
 f=inline(funcion,'x');
 
 #Se pide el numero de niveles n
@@ -10,33 +10,42 @@ disp(["numero de niveles : ",num2str(n)]);
 #Se pide el periodo T 
 T=input("ingrese el periodo: ");
 
-q_max=input("ingrese el valor maximo al cual se quiere cuanticizar: ");
+# magnitud máxima de la señal a ser cuantizada
+q_max=input("ingrese el valor maximo al cual se quiere cuantizar: ");
+
 
 
 
 #PUNTO A
-t = muestreo(t,f,T);
-
+t = muestreo(f,T);
+pause;
 # PUNTO B
 xq = quantizacacionUniforme(t,f,q_max,n);
-
+pause;
 # PUNTO C
-y_niveles_binario = codificacion(n,t,f,xq,q_max);
+niveles_binarios = codificacion(n,t,f,xq,q_max)
+pause;
 
 # PUNTO D
-disp("Seleccione el numero correspondiente al tipo de codificacion:");
+while(true)
+disp("Seleccione el numero correspondiente al formato que desee:");
 disp("1)    Unipolar NRZ");
 disp("2)    Bipolar  NRZ");
 disp("3)    Unipolar RZ");
 disp("4)    Bipolar  RZ");
-disp("5)    AMI");
+disp("5)    AMI      RZ");
 disp("6)    Manchester");
+disp("7)    Salir");
 opcion=input("ingrese su opcion: ");
-
-pulsos(opcion,y_niveles_binario)
+if opcion ==7 
+  break
+endif
+pulsos(opcion,niveles_binarios)
+pause;
+endwhile
 
 
 # PUNTO E
-demodulador(t,f,T,y_niveles_binario)
+demodulador(t,f,T,niveles_binarios)
 
 

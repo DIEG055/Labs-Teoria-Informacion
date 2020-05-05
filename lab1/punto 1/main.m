@@ -42,5 +42,5 @@ serie_fourier= fourier(f,T,t,N);
 
 # se grafican los resultados
 g = arrayfun(inline(f),t);
-plot(t,g,t,(a0/2 + serie_fourier),'r');
+plot(t,g,t,( serie_fourier),'r');
 title(['serie de Fourier trigonometrica para ', f]); grid on; %grafico de la serie de Fourier contra la funcion f(t)
