@@ -82,7 +82,7 @@ endwhile
   % Analizando la formula notamos que -H(y|x) = P*log2(P) + (P-1)*log2( (P-1) )
   if Sim_bin
     Cs = 1 + (-Hy_dado_x);
-    disp(["El canal es simetrico binario. \nEl valo de Cs ", num2str(Cs)])
+    disp(["El canal es simetrico binario. \nEl valo de Cs es ", num2str(Cs)])
   else
     disp("El canal no es simetrico binario")
   endif
