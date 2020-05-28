@@ -22,9 +22,9 @@ ok = false;
 while (~ok)
   try
     Py_dado_x=input("La matriz P(x|y) = ");
-    if (sum(size(Py_dado_x) == [length(Px) length(Px)])!=2)
+    if (size(Py_dado_x)(2) != length(Px))
       printf("Las dimensiones no considen\n\n");
-    elseif (sum(sum(Py_dado_x,2) != 1) != size(Py_dado_x)(1))
+    elseif (sum(sum(Py_dado_x,2) == 1) != size(Py_dado_x)(2))
       printf("Las probabilidades no suman 1, volver a intentar\n\n");
     else
       ok = true;
