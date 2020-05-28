@@ -1,24 +1,36 @@
 clear;
 clc;
-#Leer el valor a
+#Leer el valor Px
 ok = false;
 while (~ok)
   try
     Px=input("Ingrese el vector P(x)=");
-    ok = true;
+    if (sum(Px) != 1)
+      printf("Las probabilidades no suman 1, volver a intentar\n\n");
+    elseif (sum(size(Px) == [1 length(Px)]) != 2)
+      printf("Las dimensiones no considen\n\n");
+    else
+      ok = true;
+    endif
   catch
-    printf("Por favor, ingrese un numero v�lido.\n\n"); % Try catch para asegurarnos que ingreso un valor valido
+    printf("Por favor, ingrese un numero valido.\n\n"); % Try catch para asegurarnos que ingreso un valor valido
   end_try_catch
 endwhile
 
-#Leer el valor a
+#Leer el valor p(x|y)
 ok = false;
 while (~ok)
   try
     Py_dado_x=input("La matriz P(x|y) = ");
-    ok = true;
+    if (sum(size(Py_dado_x) == [length(Px) length(Px)])!=2)
+      printf("Las dimensiones no considen\n\n");
+    elseif (sum(sum(Py_dado_x,2) != 1) != size(Py_dado_x)(1))
+      printf("Las probabilidades no suman 1, volver a intentar\n\n");
+    else
+      ok = true;
+    endif
   catch
-    printf("Por favor, ingrese un numero v�lido.\n\n"); % Try catch para asegurarnos que ingreso un valor valido
+    printf("Por favor, ingrese un numero valido.\n\n"); % Try catch para asegurarnos que ingreso un valor valido
   end_try_catch
 endwhile
 
