@@ -99,7 +99,30 @@
   endfor  
   
   
+  
+  #calculo entropía
+ H = Entropia(prob,prob);
+ 
+ # Calculo de L
+ L = 0;
+ 
+ for i = 1: num
+    L += prob(1,i)*length(simbMat{i,1}); #se realiza la sumatoria P(xi)*ni
+ endfor  
+ 
+ # calculo de eficiencia
+ n = H/L;
+  
+  
+  printf("\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+  
+  
   #se imprimen los códigos
+  printf("\n\n");
   for i = 1: num
     printf("Simbolo %c -> Probabilidad %.2f -> Codificacion %s\n", simb(1, i), prob(1, i), simbMat{i,1});
   endfor
+  
+  printf("\n\n\nH = %.2f\n", H);
+  printf("L = %.2f\n", L);
+  printf("n = %.2f\n", n);
