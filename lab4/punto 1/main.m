@@ -133,7 +133,6 @@ printf("Matriz Decodificada | Bits de Datos \n \n");
 r2_d = r2(:, 1:size(P,2));
 disp(r2_d);
 
-# quedamos en decodificacion de sindromes del Decoder
 
 
 
