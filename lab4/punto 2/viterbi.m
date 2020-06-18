@@ -1,9 +1,14 @@
 
-
-function retval = viterbi ()  
   inf = 1000; # valor grande de referencia para calculos (infinito)
-  input = ["11"; "00"; "00"; "01"; "11"]; # entrada
-  n = rows(input) # devuelve el numero de filas de input (valores horizontales del diagrama)
+  n = input("ingrese el num de pares de bits\n");
+  cod = [""];
+  for i=0:n-1 # se reciben los datos
+    m = input("ingresa cada par de bits \n");
+    cod = [cod; m];
+  endfor
+  cod
+  #cod = ["11"; "00"; "00"; "01"; "11"]; # entrada
+  n = rows(cod); # devuelve el numero de filas de cod (valores horizontales del diagrama)
 
   states = [0, 2, 1, 3]; #valores para el algoritmo
   next = [0, 0, 1, 1; 2, 2, 3, 3];
@@ -22,7 +27,7 @@ function retval = viterbi ()
         newstate = next(bit, states(st)+1)+1;
         newstate = states(newstate)+1;
         out = output(bit, states(st)+1);
-        dist = hamdist(dec2bin(out,2), input(t,[1:2])) + dp(st,t); #distancia de hamilton que se 
+        dist = hamdist(dec2bin(out,2), cod(t,[1:2])) + dp(st,t); #distancia de hamilton que se 
         if (dp(newstate, t+1) >= dist) # si el peso calculado de hamilton es menos que el peso actual
           if ( dp(newstate, t+1) == dist && rand() >= 0.5) # se lanza la moneda si los caminos tienen el mismo peso
             continue;
@@ -76,8 +81,6 @@ function retval = viterbi ()
   
   fprintf("\n");
   path_bit = fliplr(path_bit) # convierte en un array e imprime la palabra original
-  
-  
-endfunction
+
 
 
