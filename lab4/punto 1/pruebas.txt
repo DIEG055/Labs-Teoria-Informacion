@@ -1,0 +1,14 @@
+CODIFICACION
+
+[0 0 1]
+
+DECODIFICACION
+
+
+CASO 1
+
+[0 0 0 1 0 0]
+
+CASO 2
+
+ [0 1 0 1 1 1]    |   EJEMPLO CLASE

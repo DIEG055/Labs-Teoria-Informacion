@@ -12,7 +12,6 @@ function [r_decode,d,errors] = decodificacion (r,P,H_t,S)
     for j = 1:m
       if (isequal( S(i,:), H_t(j,:)) == 1)
          errors(i,1) = j;
-         
          break
       endif
     endfor
